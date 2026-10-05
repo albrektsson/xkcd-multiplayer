@@ -4,6 +4,8 @@ Read [xkcd](https://xkcd.com/) with friends. Everyone in a room sees the same co
 **anyone** can press Prev / Random / Next. You're all stick figures pointing at the comic,
 and you can draw on it.
 
+**Play it: https://xkcd-multiplayer.vercel.app/**
+
 - Shared navigation (buttons, arrow keys, `R` for random, or type `#327` in chat)
 - Live pointers, chat speech bubbles, shared scribbles (kept per comic for the session)
 - Title text stays hidden until someone "hovers" for the whole room
