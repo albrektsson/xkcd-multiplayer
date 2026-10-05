@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xkcd: Multiplayer Edition</title>
+<meta name="description" content="Read xkcd with friends. Everyone shares one page, one Random button, and zero self-control.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>xkcd <small>: MULTIPLAYER EDITION</small></h1>
+  <p class="tag">A massively* multiplayer online webcomic of romance, sarcasm, math, and lag. <span>*up to 8</span></p>
+</header>
+
+<section id="menu">
+  <label>YOUR NAME <input id="name" maxlength="12" autocomplete="off" spellcheck="false"></label>
+  <div class="row">
+    <button id="create">CREATE ROOM</button>
+    <span class="or">or</span>
+    <input id="code" maxlength="4" placeholder="CODE" autocomplete="off" spellcheck="false">
+    <button id="join">JOIN</button>
+  </div>
+  <button id="solo" class="ghost">READ ALONE (with imaginary friends)</button>
+  <p id="msg"></p>
+  <p class="how">
+    Everyone in a room sees the same comic. Anyone can press Prev / Random / Next.<br>
+    This is exactly as chaotic as it sounds. You can also point at things and draw on them.
+  </p>
+</section>
+
+<main id="app" hidden>
+  <div id="roombar">
+    <span id="room"></span>
+    <button id="copy" class="small">COPY INVITE LINK</button>
+    <span id="players"></span>
+  </div>
+
+  <h2 id="title">&nbsp;</h2>
+
+  <nav class="comicnav">
+    <button data-nav="first">|&lt;</button>
+    <button data-nav="prev">&lt; PREV</button>
+    <button data-nav="rand">RANDOM</button>
+    <button data-nav="next">NEXT &gt;</button>
+    <button data-nav="last">&gt;|</button>
+  </nav>
+
+  <div id="stage">
+    <img id="comic" alt="" draggable="false">
+    <canvas id="ov"></canvas>
+  </div>
+
+  <button id="alt" title="It's called title text, not alt text. Someone is wrong on the internet."></button>
+
+  <div id="tools">
+    <button id="pen" class="small">PEN: ON</button>
+    <button id="clear" class="small">ERASE SCRIBBLES</button>
+    <span class="sep"></span>
+    <button class="small react">HA</button>
+    <button class="small react">I DON'T GET IT</button>
+    <button class="small react">[CITATION NEEDED]</button>
+    <button class="small react">THERE'S ALWAYS A RELEVANT XKCD</button>
+    <span class="sep"></span>
+    <button id="raptor" class="small">RELEASE RAPTOR</button>
+    <button id="mute" class="small">SOUND: ON</button>
+  </div>
+
+  <form id="chat" autocomplete="off">
+    <input id="say" maxlength="80" placeholder="say something   (or type a comic number, e.g. #327)">
+    <button>SAY</button>
+  </form>
+  <ul id="feed"></ul>
+</main>
+
+<footer>
+  Unofficial fan project, not affiliated with xkcd. All comics are by Randall Munroe,
+  <a href="https://xkcd.com/license.html" target="_blank" rel="noopener">CC BY-NC 2.5</a>, hotlinked straight from
+  <a href="https://xkcd.com/" target="_blank" rel="noopener">xkcd.com</a> — go read it there too.
+  <span id="permalink"></span>
+</footer>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
